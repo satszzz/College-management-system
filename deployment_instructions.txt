@@ -1,0 +1,15 @@
+# Manual Deployment Instructions
+
+The automatic deployment failed due to network issues on your machine.
+Once your internet connection to GitHub is restored, open your terminal in this folder and run:
+
+1. Pull any remote changes (in case you created a README on GitHub):
+   git pull origin main --allow-unrelated-histories
+
+2. Push your code:
+   git push -u origin main
+
+If the above commands fail, you can also upload files manually:
+1. Go to https://github.com/satszzz/College-management-system
+2. Click "Add file" -> "Upload files"
+3. Drag and drop the contents of this folder (excluding node_modules).
