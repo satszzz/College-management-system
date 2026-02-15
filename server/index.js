@@ -1,7 +1,12 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import connectDB from './config/db.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Route imports
 import authRoutes from './routes/auth.js';
@@ -32,6 +37,17 @@ app.use('/api/attendance', attendanceRoutes);
 app.get('/api/health', (req, res) => {
     res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
+
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+    // Serve static files from the React app build directory
+    app.use(express.static(path.join(__dirname, '../dist')));
+
+    // Handle React routing, return all requests to React app
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+    });
+}
 
 // Start server
 const start = async () => {
