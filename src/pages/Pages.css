@@ -1,0 +1,984 @@
+/* Shared Page Styles */
+.page {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-header h1 {
+    font-size: 1.75rem;
+    color: #1a1a2e;
+    margin-bottom: 0.25rem;
+}
+
+.page-header p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+/* Buttons */
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary-sm {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-sm:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline-sm {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    background: white;
+    color: #667eea;
+    border: 1px solid #667eea;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-sm:hover {
+    background: #667eea;
+    color: white;
+}
+
+.btn-action {
+    padding: 0.35rem 0.75rem;
+    background: #f1f3f4;
+    border: none;
+    border-radius: 6px;
+    color: #666;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-action:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* View Toggle */
+.view-toggle {
+    display: flex;
+    background: #f1f3f4;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.view-toggle button {
+    padding: 0.4rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.view-toggle button.active {
+    background: white;
+    color: #667eea;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Filters Bar */
+.filters-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.filter-icon {
+    position: absolute;
+    left: 0.75rem;
+    color: #adb5bd;
+    z-index: 1;
+}
+
+.filter-group select {
+    padding: 0.75rem 1rem 0.75rem 2.25rem;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    background: white;
+    cursor: pointer;
+    min-width: 160px;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.results-info {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Table Styles */
+.table-container {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    background: #f8f9fa;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f3f4;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.data-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.empty-state {
+    text-align: center;
+    color: #adb5bd;
+    padding: 3rem !important;
+}
+
+/* Badges */
+.code-badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.grade-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.grade-Aplus,
+.grade-A {
+    background: #d3f9d8;
+    color: #2b8a3e;
+}
+
+.grade-Bplus,
+.grade-B {
+    background: #fff3bf;
+    color: #e67700;
+}
+
+.grade-Cplus,
+.grade-C {
+    background: #ffe3e3;
+    color: #c92a2a;
+}
+
+.total-cell {
+    font-weight: 600;
+}
+
+/* Summary Cards */
+.summary-cards {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.summary-card {
+    flex: 1;
+    background: white;
+    padding: 1.25rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card h4 {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.summary-card .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+/* Courses Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.course-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.course-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.course-code {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.course-credits {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.course-name {
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    margin-bottom: 0.5rem;
+}
+
+.course-description {
+    color: #666;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.course-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.course-faculty {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #667eea;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f1f3f4;
+}
+
+.course-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Empty State Box */
+.empty-state-box {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #adb5bd;
+}
+
+.empty-state-box svg {
+    margin-bottom: 1rem;
+}
+
+.empty-state-box h3 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+/* Fee Summary Grid */
+.fee-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.fee-summary-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.fee-summary-card .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fee-summary-card.total .icon-wrapper {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.fee-summary-card.paid .icon-wrapper {
+    background: rgba(81, 207, 102, 0.1);
+    color: #51cf66;
+}
+
+.fee-summary-card.pending .icon-wrapper {
+    background: rgba(253, 126, 20, 0.1);
+    color: #fd7e14;
+}
+
+.fee-summary-card.overdue .icon-wrapper {
+    background: rgba(224, 49, 49, 0.1);
+    color: #e03131;
+}
+
+.fee-summary-card .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.fee-summary-card .label {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.fee-summary-card .value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.amount-cell {
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-pill.paid {
+    background: #d3f9d8;
+    color: #2b8a3e;
+}
+
+.status-pill.pending {
+    background: #fff3bf;
+    color: #e67700;
+}
+
+.status-pill.overdue {
+    background: #ffe3e3;
+    color: #c92a2a;
+}
+
+.status-icon {
+    font-size: 0.9rem;
+}
+
+/* Payment Progress */
+.payment-progress-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.payment-progress-card h3 {
+    font-size: 1rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+    height: 12px;
+    background: #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #51cf66, #37b24d);
+    border-radius: 6px;
+    transition: width 0.5s ease;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Students Grid */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.student-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+}
+
+.student-avatar {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+}
+
+.student-info h3 {
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    margin-bottom: 0.25rem;
+}
+
+.roll-number {
+    color: #667eea;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.student-details {
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #f1f3f4;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+}
+
+.student-meta {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.dept-badge,
+.sem-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.dept-badge {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.sem-badge {
+    background: rgba(81, 207, 102, 0.1);
+    color: #37b24d;
+}
+
+.student-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn.view {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.action-btn.edit {
+    background: rgba(253, 126, 20, 0.1);
+    color: #fd7e14;
+}
+
+.action-btn.delete {
+    background: rgba(224, 49, 49, 0.1);
+    color: #e03131;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Role Stats */
+.role-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.role-stat {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid;
+}
+
+.role-stat.admin {
+    border-color: #ff6b6b;
+}
+
+.role-stat.faculty {
+    border-color: #4ecdc4;
+}
+
+.role-stat.student {
+    border-color: #45b7d1;
+}
+
+.role-stat.parent {
+    border-color: #96c93d;
+}
+
+.role-stat .count {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.role-stat .label {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* User Table Specifics */
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-avatar-sm {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.email-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.role-badge {
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.role-admin {
+    background: #ffe3e3;
+    color: #c92a2a;
+}
+
+.role-faculty {
+    background: #c3fae8;
+    color: #0b7285;
+}
+
+.role-student {
+    background: #d0ebff;
+    color: #1864ab;
+}
+
+.role-parent {
+    background: #d8f5a2;
+    color: #5c940d;
+}
+
+.status-badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.status-badge.active {
+    background: #d3f9d8;
+    color: #2b8a3e;
+}
+
+.table-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .fee-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .role-stats {
+        flex-wrap: wrap;
+    }
+
+    .role-stat {
+        flex: 1 1 calc(50% - 0.75rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+    }
+
+    .filters-bar {
+        flex-direction: column;
+    }
+
+    .search-box {
+        min-width: 100%;
+    }
+
+    .fee-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-cards {
+        flex-direction: column;
+    }
+}
+
+/* ─── Dark Mode Overrides ─── */
+[data-theme="dark"] .page-header h1 {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .page-header p {
+    color: #888;
+}
+
+[data-theme="dark"] .search-box input,
+[data-theme="dark"] .filter-group select {
+    background: #1e1e32;
+    border-color: #2a2a40;
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .table-container {
+    background: #1a1a2e;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .data-table th {
+    background: #151525;
+    color: #b0b0b0;
+    border-bottom-color: #2a2a40;
+}
+
+[data-theme="dark"] .data-table td {
+    color: #c0c0c0;
+    border-bottom-color: #1e1e32;
+}
+
+[data-theme="dark"] .data-table tbody tr:hover {
+    background: #252540;
+}
+
+[data-theme="dark"] .course-card,
+[data-theme="dark"] .student-card,
+[data-theme="dark"] .summary-card,
+[data-theme="dark"] .fee-summary-card,
+[data-theme="dark"] .payment-progress-card,
+[data-theme="dark"] .role-stat,
+[data-theme="dark"] .stat-card {
+    background: #1a1a2e;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .course-name,
+[data-theme="dark"] .student-info h3,
+[data-theme="dark"] .summary-card .value,
+[data-theme="dark"] .fee-summary-card .value,
+[data-theme="dark"] .role-stat .count,
+[data-theme="dark"] .payment-progress-card h3 {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .course-description,
+[data-theme="dark"] .course-credits,
+[data-theme="dark"] .meta-item,
+[data-theme="dark"] .detail-row,
+[data-theme="dark"] .summary-card h4,
+[data-theme="dark"] .fee-summary-card .label,
+[data-theme="dark"] .role-stat .label,
+[data-theme="dark"] .amount-cell,
+[data-theme="dark"] .results-info,
+[data-theme="dark"] .progress-info {
+    color: #999;
+}
+
+[data-theme="dark"] .btn-action {
+    background: #252540;
+    color: #c0c0c0;
+}
+
+[data-theme="dark"] .btn-action:hover {
+    background: #667eea;
+    color: white;
+}
+
+[data-theme="dark"] .view-toggle {
+    background: #1e1e32;
+}
+
+[data-theme="dark"] .view-toggle button {
+    color: #999;
+}
+
+[data-theme="dark"] .view-toggle button.active {
+    background: #252540;
+    color: #667eea;
+}
+
+[data-theme="dark"] .search-box input:focus,
+[data-theme="dark"] .filter-group select:focus {
+    border-color: #667eea;
+}
+
+[data-theme="dark"] .student-details {
+    border-top-color: #2a2a40;
+    border-bottom-color: #2a2a40;
+}
+
+[data-theme="dark"] .course-faculty {
+    border-top-color: #2a2a40;
+    color: #8b9cf5;
+}
+
+[data-theme="dark"] .progress-bar-container {
+    background: #2a2a40;
+}
+
+[data-theme="dark"] .empty-state,
+[data-theme="dark"] .empty-state-box {
+    color: #666;
+}
+
+[data-theme="dark"] .empty-state-box h3 {
+    color: #b0b0b0;
+}
+
+/* ─── Table Sorting ─── */
+.sortable-th {
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+}
+
+.sortable-th:hover {
+    color: #667eea;
+}
+
+.sort-icon {
+    margin-left: 0.35rem;
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+.sort-icon.active {
+    opacity: 1;
+    color: #667eea;
+}
