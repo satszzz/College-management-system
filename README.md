@@ -6,7 +6,7 @@ A comprehensive, role-based College Management Information System built with the
 👉 **[Click here to view the Live App](https://college-management-system-gama.onrender.com/)**
 
 
-## 🚀 Features
+## Features
 
 The system provides tailored dashboards and functionalities for different user roles:
 
