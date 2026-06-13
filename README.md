@@ -2,8 +2,7 @@
 
 A comprehensive, role-based College Management Information System built with the **MERN Stack** (MongoDB, Express.js, React, Node.js). This application streamlines administrative tasks, academic management, and communication between students, faculty, and parents.
 
-## 🌐 Live Demo
-👉 **[Click here to view the Live App](https://college-management-system-gama.onrender.com/)**
+## 🌐 Live Demo:**[Click here to view the Live App](https://college-management-system-gama.onrender.com/)**
 
 
 ## Features
