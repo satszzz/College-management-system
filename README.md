@@ -61,7 +61,7 @@ Follow these instructions to get the project up and running on your local machin
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v16+ recommended)
 - [MongoDB](https://www.mongodb.com/try/download/community) (Local or Atlas)
-- [Git](https://git-scm.com/).
+- [Git](https://git-scm.com/)
 
 ### Installation
 
