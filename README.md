@@ -13,7 +13,7 @@ The system provides tailored dashboards and functionalities for different user r
 ### 🛡️ Admin
 - **User Management**: Create and manage Student, Faculty, and Admin accounts.
 - **Course Management**: Add, update, and remove courses.
-- **Reporting**: View comprehensive reports on attendance, fees, and academic performance.
+- **Reporting**:  View comprehensive reports on attendance, fees, and academic performance.
 - **System Settings**: Configure application-wide settings.
 
 ### 👩‍🏫 Faculty
@@ -142,4 +142,4 @@ This project is licensed under the MIT License.
 
 ---
 
-By Satheeswaran B
+By Satheeswaran_B
