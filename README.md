@@ -130,7 +130,7 @@ src/
 - **Authorization**: Role-based access control (RBAC) protecting routes and API endpoints.
 - **Data Protection**: Passwords are hashed before storage.
 
----
+--
 
 ## 🤝 Contributing
 
