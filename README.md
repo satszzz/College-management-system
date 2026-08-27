@@ -32,7 +32,6 @@ The system provides tailored dashboards and functionalities for different user r
 - **Performance Tracking**: Monitor their child's academic progress (marks).
 - **Fee Monitoring**: View fee dues and payment status.
 - **Communications**: Receive important updates and notices.
-
 ---
 
 ## 🛠️ Tech Stack
