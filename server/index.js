@@ -40,13 +40,16 @@ app.get('/api/health', (req, res) => {
     res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
+// 404 for unhandled API routes
+app.use('/api', (req, res) => {
+    res.status(404).json({ message: 'API endpoint not found' });
+});
+
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
-    // Serve static files from the React app build directory
     app.use(express.static(path.join(__dirname, '../dist')));
 
-    // Handle React routing, return all requests to React app
-    app.use((req, res) => {
+    app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../dist', 'index.html'));
     });
 }
