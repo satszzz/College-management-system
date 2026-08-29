@@ -1,6 +1,7 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
+import Student from '../models/Student.js';
 
 const router = express.Router();
 
@@ -25,7 +26,7 @@ router.post('/login', async (req, res) => {
 
         const token = jwt.sign(
             { id: user._id, role: user.role },
-            process.env.JWT_SECRET,
+            process.env.JWT_SECRET || 'super_secret_jwt_key_12345',
             { expiresIn: '24h' }
         );
 
@@ -63,6 +64,22 @@ router.post('/register', async (req, res) => {
             password,
             role: role || 'STUDENT'
         });
+
+        if (user.role === 'STUDENT') {
+            const count = await Student.countDocuments();
+            const rollNumber = `CS2026${String(count + 1).padStart(3, '0')}`;
+            const studentDoc = await Student.create({
+                userId: user._id,
+                rollNumber,
+                name: user.name,
+                email: user.email,
+                department: user.department || 'Computer Science',
+                semester: user.semester || 1,
+                enrollmentYear: new Date().getFullYear()
+            });
+            user.studentId = studentDoc._id;
+            await user.save();
+        }
 
         res.status(201).json({
             success: true,

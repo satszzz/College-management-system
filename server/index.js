@@ -1,3 +1,5 @@
+import dns from 'dns';
+try { dns.setServers(['8.8.8.8', '1.1.1.1']); } catch (e) {}
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
@@ -52,7 +54,7 @@ if (process.env.NODE_ENV === 'production') {
 // Start server
 const start = async () => {
     await connectDB();
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
         console.log(`🚀 Server running on http://localhost:${PORT}`);
         console.log(`📡 API endpoints ready at http://localhost:${PORT}/api`);
     });
