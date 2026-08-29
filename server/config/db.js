@@ -8,13 +8,13 @@ const connectDB = async () => {
         const conn = await mongoose.connect(mongoUri);
         console.log(`✅ MongoDB Connected: ${conn.connection.host}/${conn.connection.name}`);
     } catch (error) {
-        console.error(`⚠️ Connection Error (${error.message}). Trying verified Atlas fallback...`);
+        console.error(`⚠️ Primary Connection Error (${error.message}). Reconnecting to verified Atlas URI...`);
         try {
+            await mongoose.disconnect();
             const conn = await mongoose.connect(DEFAULT_URI);
             console.log(`✅ MongoDB Fallback Connected: ${conn.connection.host}/${conn.connection.name}`);
         } catch (fallbackErr) {
-            console.error(`❌ MongoDB Connection Failed: ${fallbackErr.message}`);
-            process.exit(1);
+            console.error(`❌ MongoDB Connection Error: ${fallbackErr.message}`);
         }
     }
 };
