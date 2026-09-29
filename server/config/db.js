@@ -1,24 +1,19 @@
 import mongoose from 'mongoose';
 
-const DEFAULT_URI = 'mongodb+srv://admin:priyamadhu@cluster0.t47mua7.mongodb.net/cms?authSource=admin&retryWrites=true&w=majority';
-
 const connectDB = async () => {
-    let mongoUri = (process.env.MONGO_URI || DEFAULT_URI).replace(/['"]/g, '').trim().replace(/\s+/g, '');
-    if (!mongoUri.includes('authSource=')) {
-        mongoUri += mongoUri.includes('?') ? '&authSource=admin' : '?authSource=admin';
+    const mongoUri = process.env.MONGO_URI;
+    if (!mongoUri) {
+        console.error('❌ MONGO_URI environment variable is not set!');
+        console.error('   Set it in your .env file or Render dashboard.');
+        process.exit(1);
     }
+
     try {
-        const conn = await mongoose.connect(mongoUri);
+        const conn = await mongoose.connect(mongoUri.replace(/['"]/g, '').trim());
         console.log(`✅ MongoDB Connected: ${conn.connection.host}/${conn.connection.name}`);
     } catch (error) {
-        console.error(`⚠️ Primary Connection Error (${error.message}). Reconnecting to verified Atlas URI...`);
-        try {
-            await mongoose.disconnect();
-            const conn = await mongoose.connect(DEFAULT_URI);
-            console.log(`✅ MongoDB Fallback Connected: ${conn.connection.host}/${conn.connection.name}`);
-        } catch (fallbackErr) {
-            console.error(`❌ MongoDB Connection Error: ${fallbackErr.message}`);
-        }
+        console.error(`❌ MongoDB Connection Error: ${error.message}`);
+        process.exit(1);
     }
 };
 
